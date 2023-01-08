@@ -6,7 +6,7 @@
 /*   By: adi-nata <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 20:48:02 by adi-nata          #+#    #+#             */
-/*   Updated: 2023/01/03 16:38:05 by adi-nata         ###   ########.fr       */
+/*   Updated: 2023/01/08 23:31:11 by adi-nata         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,14 @@ void	ft_putx(unsigned int n, char *base, int len, t_format *flag)
 
 void	ft_checkwdtx(unsigned int n, t_format *flag)
 {
-	if (flag->wdt)
-	{
-		if (flag->zero || flag->meno)
-			ft_checkhash(n, flag);
-		if (flag->hash)
-			flag->wdtquant -= 2;
-		if (flag->zero)
-			ft_putwdt0(flag);
-		else
-			ft_putwdt(flag);
-	}
+	if (!flag->wdt)
+		return ;
+	if (flag->zero || flag->meno)
+		ft_checkhash(n, flag);
+	if (flag->hash)
+		flag->wdtquant -= 2;
+	if (flag->zero)
+		ft_putwdt0(flag);
+	else
+		ft_putwdt(flag);
 }

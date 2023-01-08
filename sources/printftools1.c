@@ -50,15 +50,14 @@ void	ft_putprc0(t_format *flag)
 
 void	ft_managewdt(int len, t_format *flag)
 {
-	if (flag->wdt)
+	if (!flag->wdt)
+		return ;
+	flag->wdtquant -= len;
+	while (flag->wdtquant > 0)
 	{
-		flag->wdtquant -= len;
-		while (flag->wdtquant > 0)
-		{
-			write(1, " ", 1);
-			flag->len += 1;
-			flag->wdtquant -= 1;
-		}
+		write(1, " ", 1);
+		flag->len += 1;
+		flag->wdtquant -= 1;
 	}
 }
 

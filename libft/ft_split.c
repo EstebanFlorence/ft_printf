@@ -21,9 +21,9 @@ size_t	numstr(const char *s, char c)
 	i = 0;
 	n = 0;
 	len = 0;
-	while (s[i])
+	while (1)
 	{
-		if (s[i] == c || s[i + 1] == '\0')
+		if (s[i] == c || s[i] == '\0')
 		{
 			if (len != 0)
 				n++;
@@ -31,6 +31,8 @@ size_t	numstr(const char *s, char c)
 		}
 		else
 			len++;
+		if (s[i] == '\0')
+			break ;
 		i++;
 	}
 	return (n);
@@ -52,9 +54,7 @@ void	ft_splitta(const char *s, char c, char **split, size_t n)
 		{
 			if (len != 0)
 			{
-				tok = (char *)ft_calloc((len + 1), sizeof(char));
-				ft_memcpy(tok, s + i - len, len);
-				tok[len] = '\0';
+				tok = ft_substr(s, (unsigned int)(i - len), len);
 				split[j] = tok;
 				j++;
 			}

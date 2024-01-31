@@ -3,7 +3,7 @@ ft_printf
 </h1>
 
 <p align="center">
-reconding printf()
+printf() recoded
 </p>
 
 ft_printf is a custom implementation of the printf() function written in the C language.
@@ -22,6 +22,6 @@ This project serves as an exploration of variadic functions through the handling
 | `%%`    | Prints a percent sign.                                     |
 
 **Bonus Features:**
-- Manage any combination of the following flags: `'-0.'` and the field minimum width under all conversions.
-- Manage all the following flags: `'# + '` (Yes, one of them is a space).
+- Manages any combination of the following flags: `'-0.'` and the field minimum width under all conversions.
+- Manages all the following flags: `'# + '` (Yes, one of them is a space).
 
